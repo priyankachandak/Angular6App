@@ -1,0 +1,29 @@
+<div style="text-align:center">
+  <h1>
+    Sudent List
+  </h1>
+</div>
+
+<button type="button" class="btn btn-default" (click)="register()">Add</button>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Action</th>
+    </thead>
+    <tbody *ngFor="let stud of studlist">
+      <td>{{stud.name}}</td>
+      <td>{{stud.lastName}}</td>
+      <td>{{stud.email}}</td>
+      <td>{{stud.contDetails.phoneNumber}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="edit(stud.Id)">Edit</button>
+        <button type="button" class="btn btn-warning" (click)="delete(stud.Id)">Delete</button>
+      </td>
+    </tbody>
+  </table>
+</div>
